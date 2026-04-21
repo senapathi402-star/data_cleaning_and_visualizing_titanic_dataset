@@ -1,18 +1,35 @@
-# 🚢 Titanic Data Cleaning and Visualization
+# 🚢 Titanic — Data Cleaning & Exploratory Data Analysis
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/senapathi402-star/data_cleaning_and_visualizing_titanic_dataset/blob/main/Titanic_data_cleaning_And_visualization.ipynb)
+> **Tools Used:** Python | Pandas | NumPy | Matplotlib | Seaborn
+> **Dataset:** 891 Passengers | 15 Columns | Seaborn Built-in Dataset
 
-## 📌 Project Overview
-
-This project performs **data cleaning** and **exploratory data analysis (EDA)** on the Titanic dataset using Python. The goal is to handle missing values, understand the data structure, and extract meaningful visual insights about the passengers and survival rates.
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/senapathi402-star/data_cleaning_titanic/blob/main/Titanic_data_cleaning_And_visualization.ipynb)
 
 ---
 
-## 🗂️ Dataset
+## 📌 Objective
 
-- **Source:** Seaborn built-in Titanic dataset
-- **Size:** 891 rows × 15 columns
-- **Features:** `survived`, `pclass`, `sex`, `age`, `sibsp`, `parch`, `fare`, `embarked`, `class`, `who`, `adult_male`, `deck`, `embark_town`, `alive`, `alone`
+Perform **data cleaning** and **exploratory data analysis (EDA)** on the Titanic dataset to handle missing values, understand data structure, and extract meaningful insights about passenger survival rates.
+
+---
+
+## 🗃️ Dataset Structure
+
+| Feature | Description |
+|---------|-------------|
+| `survived` | Survival (0 = No, 1 = Yes) |
+| `pclass` | Passenger class (1, 2, 3) |
+| `sex` | Gender |
+| `age` | Age in years |
+| `sibsp` | Siblings/spouses aboard |
+| `parch` | Parents/children aboard |
+| `fare` | Ticket fare |
+| `embarked` | Port of embarkation |
+| `deck` | Deck location on ship |
+| `embark_town` | Town of embarkation |
+| `alive` | Survived (yes/no) |
+
+- **891 rows × 15 columns**
 
 ---
 
@@ -26,64 +43,86 @@ This project performs **data cleaning** and **exploratory data analysis (EDA)** 
 | `deck` | 688 missing values | Filled with pclass-wise mode |
 | `age` | Float dtype | Converted to integer |
 
-> **Note:** 116 duplicate rows were identified but **not removed**, as without passenger names, identical rows may represent genuinely different individuals.
+> **Note:** 116 duplicate rows were identified but **not removed** — without passenger names, identical rows may represent genuinely different individuals.
 
 ---
 
-## 📊 Visualizations
+## 📊 Visualizations Built
 
-### Univariate Analysis
-- Passenger class distribution (bar chart)
-- Deck distribution (count plot)
-
-### Bivariate Analysis
-- Survival count by deck (grouped bar chart)
-- Survival rate by gender (pie chart)
-- Fare vs. Age (scatter plot)
-- Fare distribution (box plot)
-- Age distribution (box plot)
+| Type | Chart | Insight |
+|---|---|---|
+| Univariate | Passenger class distribution | Class 3 dominates |
+| Univariate | Deck distribution | Deck F most occupied |
+| Bivariate | Survival by deck | Decks F & G lowest survival |
+| Bivariate | Survival rate by gender | Pie chart — females survived more |
+| Bivariate | Fare vs Age | Scatter plot — fare patterns |
+| Distribution | Fare box plot | Most fares ₹20–₹50 |
+| Distribution | Age box plot | Most passengers aged 25–35 |
 
 ---
 
 ## 🔍 Key Insights
 
-- **Class 3** had the highest number of passengers (491 out of 891)
-- **Deck F** was the most occupied deck after imputation
-- Decks **F and G** had the lowest survival rates — likely because they are located at the bottom of the ship
-- **52.53%** of males died; only **9.09%** of females died
-- **26.15%** of females survived vs. **12.23%** of males — consistent with the *"women and children first"* policy
-- Most ticket fares ranged between **$20–$50**
-- Majority of passengers were aged **25–35 years**
-- **Outliers** exist in `fare` (premium-priced tickets) and `age` (entries with age = 0)
+| Metric | Value |
+|--------|-------|
+| 👥 Total Passengers | 891 |
+| 🥉 Largest Class | Class 3 — 491 passengers (55%) |
+| 🚢 Most Occupied Deck | Deck F (after imputation) |
+| ♀️ Female Death Rate | 9.09% |
+| ♂️ Male Death Rate | 52.53% |
+| ♀️ Female Survival Rate | 26.15% |
+| ♂️ Male Survival Rate | 12.23% |
+| 💰 Typical Fare Range | $20 – $50 |
+| 🎂 Typical Age Range | 25 – 35 years |
+
+> **Key Finding:** Female passengers had nearly 3x higher survival rates than males — consistent with the *"women and children first"* policy.
+
+> Decks **F and G** (bottom of ship) had the lowest survival rates.
 
 ---
 
 ## ✅ Conclusion
 
-The cleaned dataset reveals clear patterns in survival rates based on gender, passenger class, and deck location. Female passengers had significantly higher survival rates than males. Duplicates were intentionally retained due to insufficient identifying information (no passenger names). Outliers in fare and age were preserved for analysis integrity.
+The cleaned Titanic dataset reveals clear survival patterns based on gender, passenger class, and deck location. Females had significantly higher survival rates. Duplicate rows were intentionally retained due to absence of passenger names. Outliers in fare and age were preserved for analysis integrity.
 
 ---
 
-## 🛠️ Libraries Used
+## 🛠️ Python Libraries Used
 
-```python
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-```
+- `pandas` — data loading, cleaning, missing value treatment
+- `numpy` — numerical operations and dtype conversion
+- `matplotlib` — scatter plots, bar charts, box plots
+- `seaborn` — count plots, distribution plots, styled visualizations
 
 ---
 
-## 🚀 How to Run
+## 📁 Files in this Repository
 
-1. Click the **Open in Colab** badge above, or
-2. Clone this repository and run the notebook locally:
-
-```bash
-git clone https://github.com/senapathi402-star/data_cleaning_and_visualizing_titanic_dataset.git
-```
+| File | Description |
+|------|-------------|
+| `Titanic_data_cleaning_And_visualization.ipynb` | Full Jupyter Notebook |
+| `README.md` | Project documentation |
 
 ---
 
-## 📁 Project Structure
+## ▶️ How to Run
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/senapathi402-star/data_cleaning_titanic.git
+   ```
+2. Install dependencies:
+   ```bash
+   pip install pandas numpy matplotlib seaborn
+   ```
+3. Open the notebook in Jupyter or Google Colab and run all cells
+
+---
+
+## 👤 Author
+
+**Senapathi Krishna Sai**
+Data Analyst | SQL | Python | Tableau | Excel
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/senapathi-krishna-sai-a54721388)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white)](https://github.com/senapathi402-star)
